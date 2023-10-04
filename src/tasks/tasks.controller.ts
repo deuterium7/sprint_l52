@@ -7,8 +7,6 @@ import {
   Param,
   Delete,
   UseGuards,
-  UseInterceptors,
-  UploadedFile,
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
@@ -16,7 +14,6 @@ import { UpdateTaskDto } from './dto/update-task.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { Task } from './entities/task.entity';
-import { FileInterceptor } from '@nestjs/platform-express';
 
 @UseGuards(AuthGuard('jwt'))
 @ApiTags('Tasks')
@@ -62,11 +59,5 @@ export class TasksController {
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
     return this.tasksService.remove(+id);
-  }
-
-  @Post('upload')
-  @UseInterceptors(FileInterceptor('file'))
-  uploadFile(@UploadedFile() file: Express.Multer.File) {
-    console.log(file);
   }
 }
