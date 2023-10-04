@@ -16,7 +16,7 @@ import { UpdateTaskDto } from './dto/update-task.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { Task } from './entities/task.entity';
-import {FileInterceptor} from "@nestjs/platform-express";
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @UseGuards(AuthGuard('jwt'))
 @ApiTags('Tasks')

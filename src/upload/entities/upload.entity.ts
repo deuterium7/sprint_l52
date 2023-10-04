@@ -1,30 +1,30 @@
 import {
-    Entity,
-    Column,
-    PrimaryGeneratedColumn,
-    CreateDateColumn,
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
 } from 'typeorm';
 
 @Entity()
 export class Upload {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    filename: string;
+  @Column()
+  filename: string;
 
-    @Column()
-    path: string;
+  @Column()
+  path: string;
 
-    @Column()
-    original_name: string;
+  @Column()
+  original_name: string;
 
-    @Column()
-    mime: string;
+  @Column()
+  mime: string;
 
-    @CreateDateColumn({
-        type: 'timestamp',
-        default: () => 'CURRENT_TIMESTAMP(6)',
-    })
-    public created_at: Date;
+  @CreateDateColumn({
+    type: 'timestamp',
+    default: () => 'CURRENT_TIMESTAMP(6)',
+  })
+  public created_at: Date;
 }

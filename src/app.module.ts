@@ -13,7 +13,7 @@ import { Comment } from './comments/entities/comment.entity';
 import { Task } from './tasks/entities/task.entity';
 import { AuthModule } from './auth/auth.module';
 import { UploadModule } from './upload/upload.module';
-import {Upload} from "./upload/entities/upload.entity";
+import { Upload } from './upload/entities/upload.entity';
 
 @Module({
   imports: [
